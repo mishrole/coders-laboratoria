@@ -2,65 +2,40 @@ var clasechile = document.getElementsByClassName("4-chile");
 var claselima5 = document.getElementsByClassName("5-lima");
 var claselima6 = document.getElementsByClassName("6-lima");
 
-var coder = document.getElementsByClassName("coder");
 var select = document.getElementById("select");
+
+function show(clase,atributo){
+
+	for(var i = 0; i < clase.length; i++){
+		clase[i].style.display = atributo;
+	}
+}
 
 select.onchange = function(){
 
 	if(select.value == "chile4ta"){
 
-		for(var i = 0; i < clasechile.length; i++){
-			clasechile[i].setAttribute("style","display:inline-block");
-		}
-
-		for(var i = 0; i < claselima5.length; i++){
-			claselima5[i].setAttribute("style","display:none;");
-		}
-
-		for(var i = 0; i < claselima6.length; i++){
-			claselima6[i].setAttribute("style","display:none;");
-		}
+		show(clasechile,"inline-block");
+		show(claselima5,"none");
+		show(claselima6,"none");
 
 	}else if(select.value == "lima5ta"){
 
-		for(var i = 0; i < claselima5.length; i++){
-			claselima5[i].setAttribute("style","display:inline-block");
-		}
-
-		for(var i = 0; i < claselima6.length; i++){
-			claselima6[i].setAttribute("style","display:none;");
-		}
-
-		for(var i = 0; i < clasechile.length; i++){
-			clasechile[i].setAttribute("style","display:none;");
-		}
+		show(clasechile,"none");
+		show(claselima5,"inline-block");
+		show(claselima6,"none");
 
 	}else if(select.value == "lima6ta"){
 
-		for(var i = 0; i < claselima6.length; i++){
-			claselima6[i].setAttribute("style","display:inline-block");
-		}
+		show(clasechile,"none");
+		show(claselima5,"none");
+		show(claselima6,"inline-block");
 
-		for(var i = 0; i < claselima5.length; i++){
-			claselima5[i].setAttribute("style","display:none;");
-		}
+	}else{
 
-		for(var i = 0; i < clasechile.length; i++){
-			clasechile[i].setAttribute("style","display:none;");
-		}
+		show(clasechile,"inline-block");
+		show(claselima5,"inline-block");
+		show(claselima6,"inline-block");
 
-	}else if(select.value == ""){
-
-		for(var i = 0; i < claselima6.length; i++){
-			claselima6[i].setAttribute("style","display:inline-block");
-		}
-
-		for(var i = 0; i < claselima5.length; i++){
-			claselima5[i].setAttribute("style","display:inline-block;");
-		}
-
-		for(var i = 0; i < clasechile.length; i++){
-			clasechile[i].setAttribute("style","display:inline-block;");
-		}	
 	}
 }

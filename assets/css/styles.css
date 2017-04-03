@@ -12,5 +12,24 @@ img{
 	width: 270px;
 	height: 270px;
 	margin-bottom: 5px;
+	transition: width 1.5s, height 1.5s;
+	margin-right: 8px;
+}
+
+img:hover {
+	width: 285px;
+	height: 285px;
+}
+
+select#select{
+	width: 200px;
+	height: 25px;
+	color: #000;
+	background-color: #fff;
+	border-radius: 10px;
+}
+
+select:active, select:hover {
+	outline: none;
 }
 
